@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.solverpeng.spring.dao.TsysUserDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.solverpeng.spring.bean.TsysUser">
+        <result column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="real_name" property="realName"/>
+        <result column="password" property="password"/>
+        <result column="mobile" property="mobile"/>
+        <result column="status" property="status"/>
+        <result column="last_login_ip" property="lastLoginIp"/>
+        <result column="last_login_time" property="lastLoginTime"/>
+        <result column="remark" property="remark"/>
+        <result column="campus_id" property="campusId"/>
+        <result column="creator" property="creator"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_modifior" property="lastModifior"/>
+        <result column="last_modify_time" property="lastModifyTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <select id="getById" resultMap="AllColumnMap">
+        SELECT *
+        FROM t_sys_user t
+        WHERE t.id = '156e6b8633994e159af91d62d53a3899'
+    </select>
+</mapper>
+

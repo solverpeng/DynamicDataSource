@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.solverpeng.spring.dao.TmailDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.solverpeng.spring.bean.Tmail">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="remark" property="remark"/>
+        <result column="is_important" property="isImportant"/>
+        <result column="sender_id" property="senderId"/>
+        <result column="is_timing" property="isTiming"/>
+        <result column="est_send_time" property="estSendTime"/>
+        <result column="creator" property="creator"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_modifior" property="lastModifior"/>
+        <result column="last_modify_time" property="lastModifyTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `id`,
+        `title`,
+        `content`,
+        `remark`,
+        `is_important`,
+        `sender_id`,
+        `is_timing`,
+        `est_send_time`,
+        `creator`,
+        `create_time`,
+        `last_modifior`,
+        `last_modify_time`,
+        `deleted`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO tmail (
+            `id`,
+            `title`,
+            `content`,
+            `remark`,
+            `is_important`,
+            `sender_id`,
+            `is_timing`,
+            `est_send_time`,
+            `creator`,
+            `create_time`,
+            `last_modifior`,
+            `last_modify_time`,
+            `deleted`
+        ) VALUES (
+            #{pojo.id},
+            #{pojo.title},
+            #{pojo.content},
+            #{pojo.remark},
+            #{pojo.isImportant},
+            #{pojo.senderId},
+            #{pojo.isTiming},
+            #{pojo.estSendTime},
+            #{pojo.creator},
+            #{pojo.createTime},
+            #{pojo.lastModifior},
+            #{pojo.lastModifyTime},
+            #{pojo.deleted}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO tmail
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null"> `id`,</if>
+            <if test="pojo.title!=null"> `title`,</if>
+            <if test="pojo.content!=null"> `content`,</if>
+            <if test="pojo.remark!=null"> `remark`,</if>
+            <if test="pojo.isImportant!=null"> `is_important`,</if>
+            <if test="pojo.senderId!=null"> `sender_id`,</if>
+            <if test="pojo.isTiming!=null"> `is_timing`,</if>
+            <if test="pojo.estSendTime!=null"> `est_send_time`,</if>
+            <if test="pojo.creator!=null"> `creator`,</if>
+            <if test="pojo.createTime!=null"> `create_time`,</if>
+            <if test="pojo.lastModifior!=null"> `last_modifior`,</if>
+            <if test="pojo.lastModifyTime!=null"> `last_modify_time`,</if>
+            <if test="pojo.deleted!=null"> `deleted`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null">#{pojo.id},</if>
+            <if test="pojo.title!=null">#{pojo.title},</if>
+            <if test="pojo.content!=null">#{pojo.content},</if>
+            <if test="pojo.remark!=null">#{pojo.remark},</if>
+            <if test="pojo.isImportant!=null">#{pojo.isImportant},</if>
+            <if test="pojo.senderId!=null">#{pojo.senderId},</if>
+            <if test="pojo.isTiming!=null">#{pojo.isTiming},</if>
+            <if test="pojo.estSendTime!=null">#{pojo.estSendTime},</if>
+            <if test="pojo.creator!=null">#{pojo.creator},</if>
+            <if test="pojo.createTime!=null">#{pojo.createTime},</if>
+            <if test="pojo.lastModifior!=null">#{pojo.lastModifior},</if>
+            <if test="pojo.lastModifyTime!=null">#{pojo.lastModifyTime},</if>
+            <if test="pojo.deleted!=null">#{pojo.deleted},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO tmail (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.title},
+            #{pojo.content},
+            #{pojo.remark},
+            #{pojo.isImportant},
+            #{pojo.senderId},
+            #{pojo.isTiming},
+            #{pojo.estSendTime},
+            #{pojo.creator},
+            #{pojo.createTime},
+            #{pojo.lastModifior},
+            #{pojo.lastModifyTime},
+            #{pojo.deleted}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE tmail
+        <set>
+            <if test="pojo.id != null"> `id` = #{pojo.id}, </if>
+            <if test="pojo.title != null"> `title` = #{pojo.title}, </if>
+            <if test="pojo.content != null"> `content` = #{pojo.content}, </if>
+            <if test="pojo.remark != null"> `remark` = #{pojo.remark}, </if>
+            <if test="pojo.isImportant != null"> `is_important` = #{pojo.isImportant}, </if>
+            <if test="pojo.senderId != null"> `sender_id` = #{pojo.senderId}, </if>
+            <if test="pojo.isTiming != null"> `is_timing` = #{pojo.isTiming}, </if>
+            <if test="pojo.estSendTime != null"> `est_send_time` = #{pojo.estSendTime}, </if>
+            <if test="pojo.creator != null"> `creator` = #{pojo.creator}, </if>
+            <if test="pojo.createTime != null"> `create_time` = #{pojo.createTime}, </if>
+            <if test="pojo.lastModifior != null"> `last_modifior` = #{pojo.lastModifior}, </if>
+            <if test="pojo.lastModifyTime != null"> `last_modify_time` = #{pojo.lastModifyTime}, </if>
+            <if test="pojo.deleted != null"> `deleted` = #{pojo.deleted} </if>
+        </set>
+        WHERE id = #{pojo.id}
+    </update>
+
+    <select id="getById" resultMap="AllColumnMap">
+        SELECT *
+        FROM t_mail t
+        WHERE t.id = '005da4b5782b45e485e0aa4086be30a5'
+    </select>
+</mapper>
+
